@@ -30,6 +30,8 @@
   <!-- import export -->
   <p>a: {{ a }} b: {{ b }}</p>
 
+  <!-- 컴포넌트 -->
+  <AbCd></AbCd>
 
 </template>
 
@@ -37,11 +39,13 @@
 
 import HelloWorld from './components/HelloWorld.vue'
 import { a, b } from './components/a.js'
+import AbCd from './components/AbCd.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    AbCd
   },
   data(){
     return {
@@ -49,14 +53,13 @@ export default {
       태그속성 : 'color:red',
       i: 0,
       a, b,
-      
     }
   },
   methods : { 
   increase(){ 
       this.i += 1 
     },
-  }
+  },
 }
 </script>
 

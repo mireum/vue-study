@@ -1,15 +1,16 @@
 <template>
   <div>
-
+    <p>{{ a }} {{ b }}</p>
   </div>
 </template>
 
 <script>
-export default { 
+export default {
+  name: "AbCd",
   data() {
     return {
-      a: 10,
-      b: 100
+      a: '컴포넌트',
+      b: '만들기'
     }
   }
 }
