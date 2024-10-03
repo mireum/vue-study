@@ -50,6 +50,9 @@
        $event에 데이터가 담겨 있음 -->
   <AbCd :propsData="data" @커스텀이벤트="console.log('커스텀이벤트 실행!'); console.log($event)" />
 
+  <!-- 데이터 입력 -->
+  <input v-model="inputData">
+
 </template>
 
 <script setup>
@@ -88,6 +91,15 @@ export default {
       태그속성 : 'color:red',
       i: 0,
       a, b,
+      inputData : 0,
+
+    }
+  },
+  // 데이터 감시
+  watch: {
+    inputData() {
+      // inputData가 변경될 때 실행할 코드
+      console.log('입력 변경!');
     }
   },
   methods : { 
