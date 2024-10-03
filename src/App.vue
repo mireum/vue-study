@@ -52,7 +52,17 @@
 
   <!-- 데이터 입력 -->
   <input v-model="inputData">
+  <br />
+  
+  <!-- router 라우터 -->
+  <!-- router-view 사이에 라우터가 들어가게 됨 -->
+  <!-- router-link는 클릭 시 거기로 이동 -->
+  <router-link to="/main">메인 컴포넌트로 gogo</router-link>
+  <router-view></router-view>
 
+  <!-- url 파라미터 -->
+  <!-- /main/id의 id가 출력된다! -->
+  {{$route.params.id}}
 </template>
 
 <script setup>
