@@ -1,5 +1,12 @@
 ## npm run serve 로 실행
 
+### 버전 확인
+[vue-cli 버전확인]
+vue --version
+
+[vue 버전확인]
+npm list vue
+
 A.vue (x) AaB.vue (o)
 단일 단어로 구성된 HTML 엘리먼트와의 충돌을 방지하기 위해 vue에서 제공하는 빌트인 컴포넌트를 제외한 컴포넌트의 이름은 항상 여러 단어로 구성되어야 한다.
 
@@ -28,6 +35,8 @@ vuex는 vue.js 애플리케이션을 위한 상태 관리 패턴과 라이브러
 
 이런 문제점을 해결하기 위해 모든 데이터 통신을 한 곳에서 중앙 집중식으로 관리하는 것이 '상태 관리'이다.
 
+<1> vue
+
 1. state
 프로젝트에서 공통으로 사용할 변수.
 프로젝트 내 모든 곳에서 참조 및 사용 가능.
@@ -52,3 +61,6 @@ actions 내에 함수 형태로 작성한다.
 여러 components에서 동일한 computed가 사용될 경우 getters에 정의하여 공통으로 사용.
 하위 모듈의 getters를 불러오기 위해서는 this.$store.getters["경로명/함수명"];
 
+<2> pinia
+
+mutations 없이 state, action, getters
