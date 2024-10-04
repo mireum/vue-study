@@ -62,10 +62,10 @@
   <!-- /main/id의 id가 출력된다! -->
   {{$route.params.id}}
   <br />
-  
+
   <!-- axios 테스트 -->
   <button @click="testAxios">Axios 테스트</button>
-  
+  {{ axiosData}}
 </template>
 
 <script setup>
@@ -134,17 +134,27 @@ export default {
     //     console.error('실패', res);
     //   });
     // },
-    testAxios() {
-      axios.get("https://reqres.in/api/users/2")
-      .then((res) => {
-        // 성공했을 경우
+    // testAxios() {
+    //   axios.get("https://reqres.in/api/users/2")
+    //   .then((res) => {
+    //     // 성공했을 경우
+    //     console.log('성공', res);
+    //     this.axiosData = res.data;
+    //   })
+    //   .catch((res) => {
+    //     // 실패한 경우
+    //     console.error('실패', res);
+    //   });
+    // },
+    async testAxios() {
+      const res = await axios.get("https://reqres.in/api/users/2");
+      if (res.data) {
         console.log('성공', res);
         this.axiosData = res.data;
-      })
-      .catch((res) => {
-        // 실패한 경우
+      }
+      else {
         console.error('실패', res);
-      });
+      }
     },
   },
 }
