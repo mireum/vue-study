@@ -1,3 +1,5 @@
+## vue create 프로젝트명 으로 설치
+
 ## npm run serve 로 실행
 
 ### 버전 확인
