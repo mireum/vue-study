@@ -64,3 +64,7 @@ actions 내에 함수 형태로 작성한다.
 <2> pinia
 
 mutations 없이 state, action, getters
+❗❗src 아래에 stores 폴더 생성. 그 아래에 js파일 생성.
+사용할 store의 이름은 use로 시작하는게 관례이다.
+❗❗defineStore()에 들어가는 첫번째 파라미터는 애플리케이션 전체에서 사용할 수 있는 store의 고유한 id 값이라고 생각하면 된다. ( = 컴포넌트에서 꺼낼 때 쓸 이름!! )
+❗❗store에서 this 키워드를 사용하여 상태나 메소드에 접근하기 원하는 경우 화살표함수가 아닌 일반함수로 써줘라!

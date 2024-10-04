@@ -6,7 +6,7 @@ import { createPinia } from 'pinia';
 // 라우터
 import router from "./router";
 
-createApp(App).use(router).use(axios).mount('#app')
+createApp(App).use(router).use(createPinia()).use(axios).mount('#app')
 
 // axios 전역 설정
 createApp(App).config.globalProperties.axios = axios;

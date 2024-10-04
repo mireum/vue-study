@@ -66,11 +66,28 @@
   <!-- axios 테스트 -->
   <button @click="testAxios">Axios 테스트</button>
   {{ axiosData}}
+
+  <!-- pinia -->
+  <h3>Store</h3>
+  <!-- store의 state -->
+  <p>counter: {{ store.counter }}</p>
+  <!-- store의 getter -->
+  <p>doubleCount: {{ store.doubleCount }}</p>
+  <!-- store의 actions -->
+  <button @click="store.increment">counter + 1!!</button>
+
+  <p></p>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+// import { useRoute } from 'vue-router';
+import { useCounterStore } from './stores/counter.js';
 // import { reactive } from 'vue';
+
+// const route = useRoute();
+const store = useCounterStore();
+
 const post = ref({
   title: "제목2",
   content: "내용2"
