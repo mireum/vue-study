@@ -1,6 +1,4 @@
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <div id="app">
     <img src="./assets/logo.png">
     <!-- <HelloWorld msg="Hello World!"/> -->
@@ -63,6 +61,11 @@
   <!-- url 파라미터 -->
   <!-- /main/id의 id가 출력된다! -->
   {{$route.params.id}}
+  <br />
+  
+  <!-- axios 테스트 -->
+  <button @click="testAxios">Axios 테스트</button>
+  
 </template>
 
 <script setup>
@@ -79,17 +82,16 @@ const post = ref({
 
 <script>
 
-// import HelloWorld from './components/HelloWorld.vue'
 import { a, b } from './components/a.js'
 import Props1 from './components/Props1.vue'
 import Props2 from './components/Props2.vue'
 // import Props3 from './components/Props3.vue'
 import AbCd from './components/AbCd.vue'
+import axios from "axios";
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     Props1,
     Props2,
     // Props3,
@@ -102,7 +104,7 @@ export default {
       i: 0,
       a, b,
       inputData : 0,
-
+      axiosData : "null",
     }
   },
   // 데이터 감시
@@ -113,8 +115,36 @@ export default {
     }
   },
   methods : { 
-  increase(){ 
+    increase(){ 
       this.i += 1 
+    },
+    // axios 사용
+    // testAxios() {
+    //   axios.post("https://reqres.in/api/users/2", this.price, {
+    //     headers: {
+    //       "Content-Type" : "multipart/form-data",
+    //     },
+    //   })
+    //   .then((res) => {
+    //     // 성공했을 경우
+    //     console.log('성공', res);        
+    //   })
+    //   .catch((res) => {
+    //     // 실패한 경우
+    //     console.error('실패', res);
+    //   });
+    // },
+    testAxios() {
+      axios.get("https://reqres.in/api/users/2")
+      .then((res) => {
+        // 성공했을 경우
+        console.log('성공', res);
+        this.axiosData = res.data;
+      })
+      .catch((res) => {
+        // 실패한 경우
+        console.error('실패', res);
+      });
     },
   },
 }
