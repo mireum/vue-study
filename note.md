@@ -21,7 +21,7 @@ export default {
 
 npm install vue-router@4
 
-### vuex
+### vuex / pinia
 
 참조
 https://velog.io/@na_jeong/VueVuex-Store-%EC%82%AC%EC%9A%A9%EB%B2%95
